@@ -1,0 +1,203 @@
+
+(session freerouting
+  (base_design freerouting)
+  (placement
+    (resolution um 10)
+    (component Battery:BatteryHolder_Keystone_1042_1x18650
+      (place BT1 579520 -1764720 front 0)
+    )
+    (component Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical
+      (place R8 2621280 -1115060 front 0)
+      (place R2 1458460 -231140 front 0)
+      (place R6 2581140 -1158240 front 0)
+      (place R3 2426200 -1264920 front 0)
+      (place R4 2479540 -1231900 front 0)
+      (place R1 3103880 -1668780 front 0)
+      (place R7 2372360 -1305560 front 0)
+      (place R5 2532880 -1196340 front 0)
+    )
+    (component Potentiometer_THT:Potentiometer_Alps_RK097_Single_Horizontal
+      (place RV1 3609340 -1191260 front 180)
+    )
+    (component Battery:BatteryHolder_Keystone_1042_1x18650::1
+      (place BT3 579520 -2218920 front 0)
+      (place BT2 579520 -1991820 front 0)
+      (place BT4 579520 -2446020 front 0)
+    )
+    (component Connector_PinSocket_1.27mm:PinSocket_1x01_P1.27mm_Vertical
+      (place J2 2829560 -1717040 front 0)
+      (place J1 2910840 -1717040 front 0)
+      (place .1 1457960 -154940 front 0)
+      (place .2 1386840 -157480 front 0)
+    )
+    (component "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+      (place D12 1760220 -749300 front 90)
+      (place D5 1623060 -337820 front 270)
+      (place D6 1780540 -337820 front 270)
+      (place D9 1612900 -642620 front 270)
+      (place D11 1902460 -744220 front 90)
+      (place D10 1917700 -439420 front 90)
+      (place D4 1475740 -342900 front 270)
+    )
+    (component L7805:L7805
+      (place VR2 1364080 -2204170 front 0)
+      (place VR3 1363980 -2432770 front 0)
+      (place U5 1353920 -1753595 front 0)
+      (place VR1 1714400 -221975 front 0)
+      (place VR4 2029460 -1668780 front 0)
+    )
+    (component esp32:uPesy_ESP32_Wroom_DevKit
+      (place U3 3065162 -1169252 front 0)
+    )
+    (component "HC-SR04:HC-SR04"
+      (place U4 3472370 -1897380 front 90)
+    )
+    (component Connector_PinSocket_1.27mm:PinSocket_1x02_P1.27mm_Vertical
+      (place J3 2161540 -650240 front 0)
+      (place J4 2161540 -553720 front 180)
+    )
+    (component "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead5.84mm_TabDown"
+      (place U6 566860 -594410 front 90)
+    )
+    (component LED_SMD:LED_0201_0603Metric
+      (place D7 1588410 -160020 front 0)
+    )
+    (component "Package_TO_SOT_THT:TO-92_Inline"
+      (place Q1 3086100 -1795780 front 0)
+    )
+    (component Capacitor_THT:CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal
+      (place C1 922020 -551180 front 0)
+      (place C2 923220 -431685 front 0)
+    )
+    (component LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm
+      (place D1 3368240 -1396690 front 90)
+    )
+    (component "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal::1"
+      (place D3 1470660 -749300 front 90)
+    )
+    (component "Display:LCD-016N002L"
+      (place U1 3202940 -576580 front 180)
+    )
+    (component PCF8574:DIL16
+      (place U2 3589020 -825500 front 180)
+    )
+    (component Connector_PinSocket_1.00mm:PinSocket_1x02_P1.00mm_Vertical
+      (place J6 1867260 -213440 front 0)
+    )
+  )
+  (was_is
+  )
+  (routes 
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "7.0.2-0")
+    )
+    (library_out 
+      (padstack "Via[0-1]_800:400_um"
+        (shape
+          (circle F.Cu 8000 0 0)
+        )
+        (shape
+          (circle B.Cu 8000 0 0)
+        )
+        (attach off)
+      )
+      (padstack "Via[0-1]_800:400_um"
+        (shape
+          (circle F.Cu 8000 0 0)
+        )
+        (shape
+          (circle B.Cu 8000 0 0)
+        )
+        (attach off)
+      )
+    )
+    (network_out 
+      (net 5v
+        (via "Via[0-1]_800:400_um" 690880 -426720
+          (type protect)
+        )
+      )
+      (net /12v_wheel
+        (via "Via[0-1]_800:400_um" 1846580 -335280
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1490980 -566420
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1605280 -1249680
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1468120 -1661160
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1427480 -1760220
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1432560 -566420
+          (type protect)
+        )
+      )
+      (net Earth
+        (via "Via[0-1]_800:400_um" 1041400 -355600
+          (type protect)
+        )
+      )
+      (net "Net-(D3-K)"
+        (via "Via[0-1]_800:400_um" 690880 -772160
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 1071880 -772160
+          (type protect)
+        )
+      )
+      (net "Net-(D10-A)"
+        (via "Via[0-1]_800:400_um" 1978660 -317500
+          (type protect)
+        )
+      )
+      (net "Net-(D12-A)"
+        (via "Via[0-1]_800:400_um" 665480 -454660
+          (type protect)
+        )
+      )
+      (net "Net-(J6-Pin_2)"
+        (via "Via[0-1]_800:400_um" 1727200 -279400
+          (type protect)
+        )
+      )
+      (net /D33
+        (via "Via[0-1]_800:400_um" 2837180 -1115060
+          (type protect)
+        )
+      )
+      (net /5v_control
+        (via "Via[0-1]_800:400_um" 2580640 -1689100
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 2651760 -1620520
+          (type protect)
+        )
+      )
+      (net "Net-(U6-IN4)"
+        (via "Via[0-1]_800:400_um" 568960 -665480
+          (type protect)
+        )
+        (via "Via[0-1]_800:400_um" 650240 -665480
+          (type protect)
+        )
+      )
+      (net "Net-(U6-IN2)"
+        (via "Via[0-1]_800:400_um" 693420 -533400
+          (type protect)
+        )
+      )
+      (net "Net-(U6-EnA)"
+        (via "Via[0-1]_800:400_um" 911860 -695960
+          (type protect)
+        )
+      )
+    )
+  )
+)
