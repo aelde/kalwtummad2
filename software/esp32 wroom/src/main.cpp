@@ -6,10 +6,10 @@
 
 // setup pin
 long int duration;
-int distance=0;
+int distance = 0;
 
 // wheel motor l298n
-int wheel_spd=0;
+int wheel_spd = 0;
 int enA = 13; // 12 // 33  // 13
 int in1 = 12; // 14 // 26  // 12
 int in2 = 14; // 13 // 27  // 14
@@ -35,6 +35,9 @@ int e = 35;
 
 int led1 = 19;
 int dust = 18; 
+
+// dance mode
+int dance = 0;
 
 void lcdsetup(){
   lcd.init();
@@ -84,6 +87,66 @@ void move(int fw, int bw, int right, int left){
     digitalWrite(in2, 0);
     digitalWrite(in3, 0);
     digitalWrite(in4, 0);
+  } else if (dance == 1){
+      for (int i = 0; i < 3; i++) {
+          digitalWrite(led1, HIGH);
+          delay(250);
+          digitalWrite(led1, LOW);
+          delay(250);
+      }
+    Serial.println("dance");
+    analogWrite(enA, 240);
+    analogWrite(enB, 240);
+    // spin
+    digitalWrite(in1, 1);
+      digitalWrite(led1,HIGH);
+    digitalWrite(in2, 0);
+      digitalWrite(led1,LOW);
+    digitalWrite(in3, 0);
+      digitalWrite(led1,HIGH);
+    digitalWrite(in4, 1);
+    delay(4000);
+
+    digitalWrite(led1,LOW);
+    // spin
+    digitalWrite(in1, 0);
+    digitalWrite(led1,HIGH);
+    digitalWrite(in2, 1);
+    digitalWrite(led1,LOW);
+    digitalWrite(in3, 1);
+    digitalWrite(led1,HIGH);
+    digitalWrite(in4, 0);
+    delay(4000);
+
+    digitalWrite(led1,LOW);
+    for (int i = 0; i < 3; i++) {
+          digitalWrite(led1, HIGH);
+          delay(100);
+          digitalWrite(led1, LOW);
+          delay(100);
+      }
+    // forward a  bit
+    digitalWrite(in1, 1);
+    digitalWrite(in2, 0);
+    digitalWrite(in3, 1);
+    digitalWrite(in4, 0);
+      delay(1000);
+
+    for (int i = 0; i < 5; i++) {
+          digitalWrite(led1, HIGH);
+          delay(50);
+          digitalWrite(led1, LOW);
+          delay(50);
+      }
+      digitalWrite(led1,HIGH);
+    // backward a bit
+    digitalWrite(in1, 0);
+    digitalWrite(in2, 1);
+    digitalWrite(in3, 0);
+    digitalWrite(in4, 1);
+      delay(1000);
+      digitalWrite(led1,LOW);
+
   }
   else{
     Serial.println("stop");
@@ -116,8 +179,7 @@ void move(int fw, int bw, int right, int left){
 #include <BlynkSimpleEsp32.h>
 
 // Your WiFi credentials.
-// Set password to "" for open networks.
-char ssid[] = "";
+char ssid[] = "SIAM_WIFI";
 char pass[] = "";
 
 BlynkTimer timer;
@@ -127,6 +189,7 @@ BLYNK_WRITE(V0)
 {
   // Set incoming value from pin V0 to a variable
   int value = param.asInt();
+  dance = value;
 
   // Update state
   // Blynk.virtualWrite(V1, value);
@@ -211,9 +274,14 @@ void setup(){
   pinMode(led1, OUTPUT);
 
   lcdsetup();
+    for (int i = 0; i < 5; i++) {
+    digitalWrite(led1, HIGH);
+    delay(250);
+    digitalWrite(led1, LOW);
+    delay(250);
+    }
 
   Serial.println("setup...end");
-
 }
 void loop(){
   Serial.println("loop...");
@@ -272,5 +340,5 @@ void loop(){
 
   // Serial.println("a:" + String((dust)));
   // ledcAttachPin(dust, pwm);
-  Serial.println("loop...end");
+  Serial.println("loop...end"); 
 }
