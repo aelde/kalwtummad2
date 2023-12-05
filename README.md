@@ -12,3 +12,4 @@
   - lcd1602
   - I2C liquid crystal displays
 
+การใช้งาน : หมุนมือไปในทิศที่ต้องการจะให้รถวิ่ง ดูใน HOW_TO_USE.jpeg
