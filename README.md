@@ -1,6 +1,6 @@
 # kalwtummad2
 # mini robot
-**car robot control over wifi / control over hand using mqtt**
+**car robot control over wifi / control over hand using mqtt**\
 3d : <https://collaborate.shapr3d.com/v/xkKrqxI_4FUdMemtdK0US>
 
 โปรเจคนี้เกิดจากความสนใจใน esp32 ของผมและพอดีช่วงนั้นอาจารย์มีหุ่นยนต์ดูดฝุ่นราคาถูกที่ไม่ได้ใช้อยู่ตัวนึง และพอดีกับที่ผมมี mpu6050 อยู่ที่บ้านพอดี ผมเลยเกิดไอเดียที่จะสร้างหุ่นยนต์ที่บังคับด้วยการขยับของมือขึ้นมา
