@@ -1,5 +1,7 @@
 # kalwtummad2
 # mini robot
+<img width="578" alt="image" src="https://github.com/aelde/kalwtummad2/assets/79216582/e7074572-4a99-4716-a141-38382e5a3f9a">
+
 **car robot control over wifi / control over hand using mqtt**\
 3d : <https://collaborate.shapr3d.com/v/xkKrqxI_4FUdMemtdK0US>
 
